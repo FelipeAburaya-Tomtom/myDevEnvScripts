@@ -1,21 +1,9 @@
 #!/bin/bash
 
-export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig/
-export PKGSRC_HOME=/usr/local/pkg
-export CLANG_FORMAT=${PKGSRC_HOME}/bin/clang-format
-export LLVM_COV=${PKGSRC_HOME}/bin/llvm-cov
-export PYTHON=${PKGSRC_HOME}/bin/python2.7
-export PYTHON3=${PKGSRC_HOME}/bin/python3.7
-export ANT=${PKGSRC_HOME}/bin/ant
-export PATH=${PKGSRC_HOME}/bin:$PATH
-export PATH=${PKGSRC_HOME}/sbin:$PATH
-export PATH=${PKGSRC_HOME}/gcc/bin:$PATH
-export PATH=${PKGSRC_HOME}/gnu/bin:$PATH
-export PATH=${HOME}/tom2/nkw-ccache-links:${PATH}
-
 export TOM2ROOT=$HOME/tom2
 export CCACHE_DIR=$TOM2ROOT/ccache;
 export NAVKIT_DATASET=$HOME/sync/maps/navkit;
+export PATH=${HOME}/tom2/nkw-ccache-links:${PATH}
 
 ##################################
 # Define some helpers for colors #
