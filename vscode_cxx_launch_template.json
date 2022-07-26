@@ -1,0 +1,13 @@
+{
+    "name": "CONFIG_NAME",
+    "type": "lldb",
+    "request": "launch",
+    "program": "EXECUTABLE_PATH_PLACEHOLDER",
+    "args": [ "--gtest_filter=*" ],
+    "cwd": "CWD_PLACEHOLDER",
+    "env": {
+        "NDS_DEFAULT_KEYSTORE_PASSWORD": "dL8Oe.5pi9dk4-",
+	"ROUTING_API_AUTH_TOKEN_KEY": "2dGURzdZnUFRCoSYNYO9WW61XpQvLBys",
+        "NAVKIT_DATASET": "/maps/local_maps/navkit"
+    }
+}
