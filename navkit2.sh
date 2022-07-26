@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source $HOME/nk2-envs;
-
 ##################################
 # Define some helpers for colors #
 ##################################
@@ -28,6 +26,9 @@ else
 fi
 
 export NK2_REPOS_ROOT=$SSD/nk2;
+export JAVA_HOME=/usr/local/pkg/java/adoptopenjdk11-bin
+export PATH=/usr/local/pkg/bin:/usr/local/pkg/sbin:/usr/local/pkg/gcc/bin:$JAVA_HOME/bin:$PATH
+ulimit -n 2560
 
 #############
 #  Wartung  #
