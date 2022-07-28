@@ -3,7 +3,6 @@
 export TOM2ROOT=$HOME/tom2
 export CCACHE_DIR=$TOM2ROOT/ccache;
 export NAVKIT_DATASET=$HOME/sync/maps/navkit;
-export PATH=${HOME}/tom2/nkw-ccache-links:${PATH}
 
 ##################################
 # Define some helpers for colors #
@@ -34,28 +33,3 @@ function getLabelForCurrentDirectory()
 function getLabelForGitCurrBranch() { git branch 2> /dev/null | grep '\*' | awk -F' ' '{printf " # "$2}'; }
 
 PS1="\n\[${SetColorToBLUE}\][\$(getLabelForCurrentDirectory)\[${SetColorToLightBLUE}\]\$(getLabelForGitCurrBranch)\[${SetColorToBLUE}\]]$ \[${SetNoColor}\]";
-
-function doConanInstall()
-{
-  # debug oder release?
-  if [ -n "$1" ];
-  then
-    case $1 in
-      debug)
-        local buildType="Debug";
-        ;;
-      release)
-        local buildType="Release";
-        ;;
-      *)
-        printf "${SetColorToLightRED}Option '${1}' ist nicht bekannt!${SetNoColor}\n";
-        return;
-        ;;
-    esac
-  else
-    printf "${SetColorToLightRED}Leg bitte fest, ob Debug oder Release sein soll.${SetNoColor}\n";
-    return;
-  fi
-
-  conan install .. $2 $3 $4 $5 $6 -s build_type=$buildType -e CC=clang -e CXX=clang++ --profile=routing_api --build=missing;
-}
