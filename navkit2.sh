@@ -291,7 +291,7 @@ function runNavKit2DeveloperApp()
     then
       startAppInsideXTerm ENGINE \
         $NK2_REPOS_ROOT/nk2-developer-app/build/lib \
-        "../bin/nav-engine --api $ROUTING_API_AUTH_TOKEN_KEY --map $mapDataPath --keystore $keystorePath --password $NDS_DEFAULT_KEYSTORE_PASSWORD --guidance-mode onboard-v2 --mapdisplay-mode onboard 2> engine.log.txt"
+        "../bin/nav-engine --api $ROUTING_API_AUTH_TOKEN_KEY --map $mapDataPath --keystore $keystorePath --password $NDS_DEFAULT_KEYSTORE_PASSWORD --guidance-mode onboard-v2 2> ../../engine.log.txt"
     fi
   elif [ "$1" == "online" ];
   then
@@ -299,7 +299,7 @@ function runNavKit2DeveloperApp()
     then
       startAppInsideXTerm ENGINE \
         $NK2_REPOS_ROOT/nk2-developer-app/build/lib \
-        "../bin/nav-engine --api $ROUTING_API_AUTH_TOKEN_KEY --guidance-mode online-v2 2> engine.log.txt"
+        "../bin/nav-engine --api $ROUTING_API_AUTH_TOKEN_KEY --guidance-mode online-v2 2> ../../engine.log.txt"
     fi
   else
     printf "\n${SetColorToRED}Argument nicht anerkannt! Wähl bitte entweder 'onboard' oder 'online' aus.${SetNoColor}\n\n";
@@ -309,8 +309,8 @@ function runNavKit2DeveloperApp()
   if [ -z "$(ps -f | grep 'nav-dimui' | grep -v grep)" ];
   then
     startAppInsideXTerm GUI \
-      $NK2_REPOS_ROOT/nk2-developer-app/build/lib \
-      "../bin/nav-dimui --api $ROUTING_API_AUTH_TOKEN_KEY 2> gui.log.txt";
+      $NK2_REPOS_ROOT/nk2-developer-app/build \
+      "./bin/nav-dimui --api $ROUTING_API_AUTH_TOKEN_KEY 2> ../gui.log.txt";
   fi
 }
 alias nk2devapp=runNavKit2DeveloperApp;
