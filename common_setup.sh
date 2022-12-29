@@ -107,6 +107,10 @@ alias %java="find . -type f | grep '\.java$'";
 findInJava() { %java | xargs grep --color=always -n "$@" | sed -e 's/[ \t]\+/ /'; }
 alias @java=findInJava;
 
+alias %kotlin="find . -type f | grep '\.kt$'";
+findInKotlin() { %kotlin | xargs grep --color=always -n "$@" | sed -e 's/[ \t]\+/ /'; }
+alias @kotlin=findInKotlin;
+
 alias %json="find . -type f | grep '\.json$'";
 findInJson() { %json | xargs grep --color=always -in "$@" | sed -e 's/[ \t]\+/ /'; }
 alias @json=findInJson;
